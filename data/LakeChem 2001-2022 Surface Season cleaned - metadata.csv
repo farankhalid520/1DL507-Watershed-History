@@ -1,0 +1,62 @@
+This data has been cleaned up and compiled from the SLU national monitoring program. You can find more information on the data here: https://miljodata.slu.se/mvm/Search,,
+more information on the water chemistry collection is available at: https://www.slu.se/institutioner/vatten-miljo/laboratorier/vattenkemiska-laboratoriet/,,
+,,
+Column name,Explanation,Some Domain information
+MD-MVM Id,Use this ID as the unique identifier for each site,
+Nationellt övervakningsstations-ID,National ID that will be implemented later,
+Övervakningsstation,Name of the station,
+Stationskoordinat N/X,Latitude Station coordinates in SWEREF99,
+Stationskoordinat E/Y,Longitude Station coordinates in SWEREF99,
+Län,County,
+Kommun,Municiplaity,
+MS_CD C3,"
+Water body ID . Might be used for finding more background data",
+ProvId,Sampl ID,
+Provdatum,Sample date,
+Provtagningsår,Year,
+Provtagningsmånad,Month,
+Provtagningsdag,Day,
+SeasonType,2 for the alpine region,
+Season,"1 Winter, 2 Sprien, 3 Summer, 4 Autumn",
+Season priority,How the months are prioritised when there are several samples for a season,
+Season cleaning,The formula for selecting the ones that were removed after sorting ,
+Max provdjup (m),Max sample depth (m),
+TOC (mg/l C),"this is the total organic carbon measured on an unfiltered sample. This record is more complete and since most of the carbon in the water is likely dissolved organic carbon, you can use this is as the dependant variable",
+DOC (mg/l C),"measured for water filtered to 0.45 um, a much sparser record so you can check it against the TOC data to see how the TOC represents the DOC",
+Tot-N_ps (µg/l N),total nitrogen,"this includes nitrate, nitrite, ammonium, and all nitrogen in organic molecules"
+Tot-N_TNb (µg/l N),total nitrogen measured in a different way,"this includes nitrate, nitrite, ammonium, and all nitrogen in organic molecules"
+Abs_F 254 (/5cm),"absorbance at 254 nm, you can use this to calculate a metric of organic carbon quality, see Domain information column","You can calculate the specific UV absorbance at 254 nm using this formula and the TOC value (as a proximate DOC value): 
+(1) First set units of absorbance to per meter: (abs/5)*100
+(2) Then Correct absorbance for Fe absorbance: abs (in m) - (0.0653 * Fe concentration in mg/L) + 0.002 (see Poulin ref below)
+(3) then divide this corrected absorbance value by the TOC concentration below (in units of mg/L) so you have final units of SUVA254 in m*L/mg. This is a measure of how aromatic the organic carbon is and can be used as another dependant variable.
+
+Poulin et al. 2014: https://pubs.acs.org/doi/10.1021/es502670r"
+Abs_F 365 (/5cm),absorbance at 365 nm,
+Abs_F 420 (/5cm),absorbance at 420 nm,
+Abs_F 436 (/m),absorbance at 436 nm,
+Abs_OF 420 (/5cm),absorbance at 420 nm,
+Turb_FNU (FNU),"turbidity, can think about it like how many particles are in the water, how muddy is it",
+Kfyll (µg/l),chlorophyll a concentration,
+pH,pH,
+Kond_25 (mS/m),Conductivity,
+Alk/Acid (mekv/l),Alkalinity/Acidity,
+Ca (mekv/l),Calcium concentration,
+Mg (mekv/l),Magnesium,
+Na (mekv/l),Sodium,
+K (mekv/l),Potassium,
+SO4 (mekv/l),Sulfate,"Could be an interesting variable to look at in relation to organic carbon and different watersheds. Because of the history of acid rain in Sweden, sulfate has inhibited DOC release from the watersheds, but this is more pronounced in forested watersheds, since in wetlands the sulfate was washed away"
+Cl (mekv/l),chloride,
+F (mekv/l),fluoride,
+NH4-N (µg/l N),ammonium ,"these are important nutrients that could organic carbon indirectly, either through primary production and release of organic carbon from primary production, or through providing nutrients for microorganisms to break down organic carbon"
+NO2+NO3-N (µg/l N),nitrate + nitrite,"these are important nutrients that could organic carbon indirectly, either through primary production and release of organic carbon from primary production, or through providing nutrients for microorganisms to break down organic carbon"
+PO4-P (µg/l P),phosphate,"these are important nutrients that could organic carbon indirectly, either through primary production and release of organic carbon from primary production, or through providing nutrients for microorganisms to break down organic carbon"
+Tot-P (µg/l P),Total Phosphorus,this includes phosphate and all phosphorus bound up in organics
+Si (mg/l),silicon,"in certain forms, can be an important nutrients for primary producers"
+Fe (µg/l),iron,can bind to organic carbon compounds and can be an important control on transporting/preserving organic carbon. It's presence can also increase absorbance
+Al (µg/l),aluminum,
+Al_s (µg/l),aluminum,
+Syrgashalt (mg/l O2),Dissolved oxygen concentration,
+Siktdjup (m),Secchi depth,"it's an indicator of how clear the water is, the lower the value the less clear the water is. Used as a proxy for eutrophication often in lakes. "
+Siktdjup med kikare (m),Secchi depth when using binoculars,
+Siktdjup utan kikare (m),Secchi depth without bionculars,
+Vattentemperatur (°C),Water temperature,
